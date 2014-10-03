@@ -8,12 +8,10 @@
 - Price: academic: $1425, student $1185.  This includes lodging and food.
 - Notes: This meeting always gets oversubscribed. Cannot submit abstract without registration
 
-
 ** ENAR 2015
 - Miami, Florida
 - 2015, March 15-18
 - Abstracts: Oct 15, Dist. Student Oct 15
-
 
 ** ASCONA
 - Ascona, Switzerland
@@ -22,10 +20,8 @@
 ** The NIH epigenetics conference
 - At NIH near Washington DC
 
-
 ** Epigenomics of Common Disease
 - I expect 2015 will be in Baltimore.
-
 
 ** Genomics of Common Disease
 
@@ -43,6 +39,12 @@
 - Baltimore
 - 2015, Oct 18-22
 - Abstract: usually around june 1st.
+
+** Statistical Methods for Post Genomic Data
+- 2015, Feb 12-13
+- Munich, Germany
+- Abstract 2014, Dec 5.
+- [URL](http://gagneurweb.genzentrum.lmu.de/smpgd15/#/smpgd2015)
 
 * Courses
 
