@@ -46,6 +46,10 @@
 - Abstract 2014, Dec 5.
 - [URL](http://gagneurweb.genzentrum.lmu.de/smpgd15/#/smpgd2015)
 
+** useR 2015
+- Aalborg, Denmark
+- Tutorial (3h) deadline: January 5.
+
 * Courses
 
 ** Brixen
