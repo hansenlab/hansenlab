@@ -1,0 +1,59 @@
+\documentclass[english,letterpaper,pdftex,12pt]{article}
+\usepackage{fullpage}
+\usepackage{times}
+\usepackage{babel}
+\usepackage{xr}
+% \externaldocument{manuscript} % External references to figures etc.
+\usepackage{color,url,hyperref}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.75}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=darkblue,urlcolor=darkblue,
+            anchorcolor=darkblue,citecolor=darkblue}
+\usepackage{doi}
+\usepackage[authoryear]{natbib}
+\newenvironment{response}{\begingroup \textbf{Response:}}{\endgroup}
+\begin{document}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{.4\baselineskip}
+\newcommand{\fixme}[1]{{\color{red} #1}}
+
+\title{Response to referees\\
+  for \\ MANUSCRIPT TITLE}
+\date{}
+\author{
+  Kasper D.\ Hansen
+}
+
+\maketitle
+
+We thank the reviewers for the careful reading of our manuscript and their thoughtful comments, which
+have led to an improved manuscript.
+
+GENERAL TEXT ABOUT EDITS.
+
+\section*{Reviewer 1}
+
+\begin{quote}
+  The authors blah blah.
+  
+  1) Question 1
+\end{quote}
+
+\begin{response}
+  Our fix.  Including what we now write.
+  \textit{This suggests that the summarized control probes can be used as surrogates for unwanted
+    variation; the use of control probes in normalization has a long history in microarray
+    analysis.}
+\end{response}
+
+\clearpage
+
+\bibliographystyle{plainnat}
+\bibliography{manuscript}
+
+\end{document}
+
+% Local Variables:
+% fill-column: 100
+% LocalWords: LocalWords 
+% End:

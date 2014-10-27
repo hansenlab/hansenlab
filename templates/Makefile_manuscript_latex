@@ -1,0 +1,29 @@
+PAPER=manuscript
+SUPP=supplementary
+RESPONSE=response
+
+pdf: ${PAPER}.tex ${PAPER}.bib
+	texi2pdf -q -c ${PAPER}.tex
+
+response: ${RESPONSE}.tex ${PAPER}.tex
+	texi2pdf -q ${PAPER}.tex
+	texi2pdf -q -c ${RESPONSE}.tex
+
+supp: ${SUPP}.tex
+	texi2pdf -q -c ${SUPP}.tex
+
+cleanbib: ${PAPER}.bib
+	cp ${PAPER}.bib ${PAPER}.bib-old
+	egrep -v '[ 	]*(Au|Avg|Address|Cin|Crdt|Da|Dcom|Dep|Edat|Ein|Gr|Issn|Jid|Jt|Language|Lr|Md|Mh|Mhda|Pii|Phst|Pst|Own|Pl|Pmc|Pr|Pt|Pu|Pubm|Rd|Rf|Rev|Rtg|Rn|Sb|Si|So|Sum|Stat|Tot|Type|Up|Urldata) = [{]' ${PAPER}.bib > ${PAPER}.bib-new
+	mv ${PAPER}.bib-new ${PAPER}.bib
+	egrep -v '[ 	]*(month|date-added|date-modified|affiliation|keywords|language|read|rating|abstract|url|local-url) =' ${PAPER}.bib > ${PAPER}.bib-new
+	mv ${PAPER}.bib-new ${PAPER}.bib
+
+clean:
+	rm -Rf ${PAPER}.log ${PAPER}.aux ${PAPER}.out \
+	  ${PAPER}.bbl ${PAPER}.blg \
+	  ${SUPP}.log ${SUPP}.aux ${SUPP}.out \
+	  ${SUPP}.bbl ${SUPP}.blg \
+	  ${RESPONSE}.log ${RESPONSE}.aux ${RESPONSE}.out \
+	  auto
+
