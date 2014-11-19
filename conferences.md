@@ -50,6 +50,11 @@
 - Aalborg, Denmark
 - Tutorial (3h) deadline: January 5.
 
+** Probabilistic Modeling in Genomics
+- CSHL
+- Oct 14=17, 2015
+
+
 * Courses
 
 ** Brixen
