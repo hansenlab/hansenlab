@@ -1,36 +1,14 @@
 * Conferences
 
-** Biology of Genomes 
-- [URL](http://meetings.cshl.edu/meetings/2015/genome15.shtml)
-- CHSL on Long Island, NY
-- 2015, May 5-9th
-- Abstracts: February 13th
-- Price: academic: $1425, student $1185.  This includes lodging and food.
-- Notes: This meeting always gets oversubscribed. Cannot submit abstract without registration
-
-** ENAR 2015
-- Miami, Florida
-- 2015, March 15-18
-- Abstracts: Oct 15, Dist. Student Oct 15
-
-** ASCONA
-- Ascona, Switzerland
-- 2015, May 31 to June 5
-
 ** The NIH epigenetics conference
 - At NIH near Washington DC
 - 2015, April 16-17th
 - [URL](http://ncifrederick.cancer.gov/events/cecb2015/)
 - Abstract deadine (posters only I think) March 6, 2015.
 
-** Epigenomics of Common Disease
-- 6-9th of November
-- expected to be in Baltimore, or at least the US
-
-** Genomics of Common Disease
-- September 2-5
-- Cambridge UK
-- [URL](https://registration.hinxton.wellcome.ac.uk/display_info.asp?id=494)
+** useR 2015
+- Aalborg, Denmark
+- June 30th - July 3rd.
 
 ** Bioconductor
 - Seattle, USA
@@ -39,34 +17,41 @@
 ** JSM (Joint Statistical Meeting)
 - Seattle
 - 2015, August 8-13.
-- Abstract: Feb. 2, 2015
-  - Topic Contributed sessions: Januay 15
+- Abstract: DONE
 - [URL](http://www.amstat.org/meetings/jsm/2015/)
 
-** ASHG (American Society of Human Genetics)
-- Baltimore
-- 2015, Oct 18-22
-- Abstract: usually around june 1st.
-
-** Statistical Methods for Post Genomic Data
-- 2015, Feb 12-13
-- Munich, Germany
-- Abstract 2014, Dec 5.
-- [URL](http://gagneurweb.genzentrum.lmu.de/smpgd15/#/smpgd2015)
-
-** useR 2015
-- Aalborg, Denmark
-- Tutorial (3h) deadline: January 5.
+** Genomics of Common Disease
+- September 2-5
+- Cambridge UK
+- [URL](https://registration.hinxton.wellcome.ac.uk/display_info.asp?id=494)
 
 ** Probabilistic Modeling in Genomics
 - CSHL
 - Oct 14-17, 2015
+- Abstract deadline: July 24th
+- [URL](http://meetings.cshl.edu/meetings/2015/probgen15.shtml)
+
+** ASHG (American Society of Human Genetics)
+- Baltimore
+- 2015, Oct 18-22
+- Abstract: June 11th
+
+** Epigenomics of Common Disease
+- 6-9th of November
+- expected to be in Baltimore, or at least the US
+
+** 450k workshop
+- London
+- May 21st (Thursday)
+- [URL](http://webspace.qmul.ac.uk/rlowe/450kworkshop//register.html)
 
 
-* Courses
-
-** Brixen
-- Brixen, Italy
-
-* Other dates
+** Recurrent Meetings of Interest
+- Biology of Genomes (late spring)
+- ENAR (early spring)
+- JSM (late summer months)
+- ASHG (fall)
+- Genome Informatics
+- Epigenomics of Common Disease (fall)
+- Bioconductor (summer months)
 
