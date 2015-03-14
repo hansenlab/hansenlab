@@ -1,6 +1,6 @@
-* Conferences
+# Conferences
 
-** The NIH epigenetics conference
+## The NIH epigenetics conference
 - At NIH near Washington DC
 - 2015, April 16-17th
 - [URL](http://ncifrederick.cancer.gov/events/cecb2015/)
