@@ -6,47 +6,47 @@
 - [URL](http://ncifrederick.cancer.gov/events/cecb2015/)
 - Abstract deadine (posters only I think) March 6, 2015.
 
-** useR 2015
+## useR 2015
 - Aalborg, Denmark
 - June 30th - July 3rd.
 
-** Bioconductor
+## Bioconductor
 - Seattle, USA
 - 20-22th of July
 
-** JSM (Joint Statistical Meeting)
+## JSM (Joint Statistical Meeting)
 - Seattle
 - 2015, August 8-13.
 - Abstract: DONE
 - [URL](http://www.amstat.org/meetings/jsm/2015/)
 
-** Genomics of Common Disease
+## Genomics of Common Disease
 - September 2-5
 - Cambridge UK
 - [URL](https://registration.hinxton.wellcome.ac.uk/display_info.asp?id=494)
 
-** Probabilistic Modeling in Genomics
+## Probabilistic Modeling in Genomics
 - CSHL
 - Oct 14-17, 2015
 - Abstract deadline: July 24th
 - [URL](http://meetings.cshl.edu/meetings/2015/probgen15.shtml)
 
-** ASHG (American Society of Human Genetics)
+## ASHG (American Society of Human Genetics)
 - Baltimore
 - 2015, Oct 18-22
 - Abstract: June 11th
 
-** Epigenomics of Common Disease
+## Epigenomics of Common Disease
 - 6-9th of November
 - expected to be in Baltimore, or at least the US
 
-** 450k workshop
+## 450k workshop
 - London
 - May 21st (Thursday)
 - [URL](http://webspace.qmul.ac.uk/rlowe/450kworkshop//register.html)
 
 
-** Recurrent Meetings of Interest
+# Recurrent Meetings of Interest
 - Biology of Genomes (late spring)
 - ENAR (early spring)
 - JSM (late summer months)
