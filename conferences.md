@@ -6,6 +6,11 @@
 - [URL](http://ncifrederick.cancer.gov/events/cecb2015/)
 - Abstract deadine (posters only I think) March 6, 2015.
 
+## 450k workshop
+- London
+- May 21st (Thursday)
+- [URL](http://webspace.qmul.ac.uk/rlowe/450kworkshop/register.html)
+
 ## useR 2015
 - Aalborg, Denmark
 - June 30th - July 3rd.
@@ -39,11 +44,6 @@
 ## Epigenomics of Common Disease
 - 6-9th of November
 - expected to be in Baltimore, or at least the US
-
-## 450k workshop
-- London
-- May 21st (Thursday)
-- [URL](http://webspace.qmul.ac.uk/rlowe/450kworkshop//register.html)
 
 
 # Recurrent Meetings of Interest
