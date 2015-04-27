@@ -22,6 +22,12 @@ Imputation
 
   Ernst, J. & Kellis, M. Large-scale imputation of epigenomic datasets for systematic annotation of diverse human tissues. Nat Biotechnol 33, 364–376 (2015).
 
+## Signal processing
+
+This paper might be very related to a large SVD approach:
+
+  Kumar, V. et al. Uniform, optimal signal processing of mapped deep-sequencing data. Nat Biotechnol 31, 615–622 (2013).
+
 ## Prediction using DNA alone
 
 These paper explore prediction epigenome using DNA; something that is kind of weird to do in my opinion.
