@@ -6,6 +6,12 @@
 - [URL](http://ncifrederick.cancer.gov/events/cecb2015/)
 - Abstract deadine (posters only I think) March 6, 2015.
 
+## NY Epigenomics Symposium 2015
+- NY
+- May 4th 8-5.30
+- [URL](https://www.eventbrite.com/e/new-york-epigenomics-symposium-2015-tickets-16189151187?aff=estw)
+- Abstracts deadlines 15th of April (posters)
+
 ## 450k workshop
 - London
 - May 21st (Thursday)
@@ -14,6 +20,8 @@
 ## useR 2015
 - Aalborg, Denmark
 - June 30th - July 3rd.
+- [URL](http://user2015.math.aau.dk)
+- Abstract deadline April 10th.
 
 ## Bioconductor
 - Seattle, USA
