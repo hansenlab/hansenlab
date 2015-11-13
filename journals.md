@@ -38,5 +38,25 @@ Impact: 2.2
 
 F1000Research
 Impact: no IF yet.
-Cost: software: 500, research/methods: 1000.
+Cost:
+0-1000 words: $150
+1000-2500 words: $500
+2500+ words: $1000
+8000+ words: $2000
 Comments: good place to quickly publish pure software papers.
+Supports Overleaf
+Does not accept PDF at submission
+CC-BY License
+
+Scientific Reports
+Impact: 5.1
+Cost: $1,495
+Does not accept PDF at submission
+Supports Overleaf
+CC-BY license
+Recent controversy re. paid peer review
+
+PeerJ
+Impact: no IF yet.
+Cost: Need to be a member
+
