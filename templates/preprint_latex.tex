@@ -1,39 +1,17 @@
 \documentclass[pdftex,english,12pt]{article}
-\usepackage{palatino}
-\usepackage{mathpazo}
-\usepackage{parskip}
-\usepackage{fullpage}
-\usepackage{amsmath,amssymb}
-\usepackage{graphicx}
-\usepackage{babel}
-\usepackage{subfig}
-\usepackage[labelfont=bf,labelsep=period,justification=raggedright]{caption}
-\usepackage{doi}
-\usepackage[authoryear]{natbib}
-\usepackage{authblk}
-\usepackage{url,hyperref,color}
-\definecolor{darkblue}{rgb}{0.0,0.0,0.75}
-\hypersetup{colorlinks,breaklinks,
-            linkcolor=darkblue,urlcolor=darkblue,
-            anchorcolor=darkblue,citecolor=darkblue}
-\newcommand{\fixme}[1]{{\color{red} #1}}
+\usepackage{hansenpreprint}
+\addbibresource{bib_name.bib}
 \begin{document}
-
-\renewcommand\Affilfont{\small}
 
 \title{Draft title}
 
 \author[1,2,*]{Kasper D.\ Hansen}
 \affil[1]{Department of Biostatistics, Johns Hopkins Bloomberg School of Public Health}
 \affil[2]{McKusick-Nathans Institute of Genetic Medicine, Johns Hopkins School of Medicine}
+\corrauthor{\url{khansen@jhsph.edu}}
+
 \date{}
-
 \maketitle
-
-\let\oldthefootnote\thefootnote
-\renewcommand{\thefootnote}{\fnsymbol{footnote}}
-\footnotetext[1]{To whom correspondence should be addressed. Email: \url{khansen@jhsph.edu}}
-\let\thefootnote\oldthefootnote
 
 \begin{abstract}
   \noindent 
@@ -57,8 +35,7 @@
 
 \clearpage
 
-\bibliographystyle{plainnat}
-\bibliography{bib_name}
+\printbibliography[title=Bibliography]
 
 \clearpage
 
