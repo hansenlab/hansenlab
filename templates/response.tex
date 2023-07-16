@@ -1,0 +1,331 @@
+\documentclass[english,letterpaper,pdftex,12pt]{article}
+\usepackage{hansenresponse}
+\addbibresource{meanCoexp.bib}
+\begin{document}
+\title{
+Co-expression analysis is biased by a mean-correlation relationship \\
+GBIO-D-20-00228\\
+\vspace*{1cm}
+Response to reviews
+}
+\author{Yi Wang \and Stephanie C.\ Hicks \and Kasper D.\ Hansen}
+\date{}
+
+\maketitle
+
+\clearpage
+
+\section*{Editor}
+
+\begin{quote}
+  As you will see from the reports, the Referees are not convinced of the utility of the proposed method and feel that there is not enough evidence to support the conclusions. Referee 1 also mentions other works that deal with biases in co-expression analyses and hence questions the novelty of the work. In the light of these comments, I am sorry to say that we cannot offer to publish the manuscript. 
+\end{quote}
+
+\begin{response}
+  We have carefully considered the comments by the referees. The immediate impression is laid out by the editor: lack of novelty and questioning of the support for our conclusions. However, reviewing the literature cited by reviewer 1 and considering the comments of reviewer 2 in light of this literature, we are now convinced that the major part of these issues are less relevant than the immediate impression.
+  
+    In brief: 
+    
+    
+    \citep{Crow2016, Greene2015, Ferrari2018, Obayashi2013}
+    
+    Leandros suggests using known TF links from \citet{Neph2012} and ask if these known links are now identified.
+    
+    
+    \citet{Greene2015} does a huge amount of work constructing tissue-specific gene networks. However, the input data is much more than just expression data, so it is not at all clear this is really a co-expression analysis. In other words, this is an example of integrating across many datasets, but not really an example of a co-expression analysis. Looking at their website, it is very gene orientied. If we could grab a network specific to a given tissue it would be possible to investigate an expression level bias. But it's not clear such a bias would exist and it is not clear that SpQN would correct for it.
+    
+    \citet{Obayashi2013} is weird. It appears they construct a species-specific network by correlating data across all samples for that species (for a specific affy chip or RNA-seq). This makes it hard to talk about expression level per se. They run Combat with study as a preprocessing method, which largely removes tissue specific effects.  They have a gene correlation matrix on their website (use Hsa-r.c4-0 which is RNA-seq according to their 2018 paper). Looking at this correlation matrix there are two issues (1) it is in mutual rank scale with numbers in the 1-20k range (2) the gene identifier is an integer and I don't see what it means. It may be hard to check if there is an expression bias in this matrix. 
+\end{response}  
+  
+
+\section*{Reviewer 1}
+
+\begin{quote}
+In the article "Co-expression is biased by a mean-correlation relationship" the authors first provide a demonstration of their title claim using bulk RNA-seq data from the GTeX consortium (Fig 2), suggest the undesirability of this effect based on its absence from PPI data (Fig 3), then propose a method called spatial quantile normalization (SpQN) to try to address it (Fig 5). 
+
+SpQN is a generalization of quantile normalization, and it works by partitioning the feature space into disjoint bins in two dimensions, then performing empirical normalization across pairs of adjacent bins such that all distributions match a reference (aka qtarget) distribution. In this case, bins are ordered by mean expression, and the target distribution is a bin containing correlations between highly expressed genes. 
+
+The authors show that following SpQN, the distribution of genes with high correlations is no longer skewed toward highly expressed genes (Fig 6d), and that they recover more edges between transcription factors and other genes (Fig 8). They also apply the method to single-cell RNA-seq data (Fig 9). The rest of the paper is concerned with the impact of principle component regression on co-expression distributions (Figs 10-13). 
+
+While I hoped to like this paper and found it easy to follow, the lack of meaningful validation left me unconvinced that SpQN is an essential method for co-expression. Though the method clearly does what it set out to do (Fig 7, 11), there are very few results here. As a minor point, the final section on PC regression feels out of place, and somewhat unnecessary. 
+\end{quote}
+
+\begin{response}
+We need to explain why we are looking at the impact of removing PCs
+
+
+\end{response}  
+
+\begin{quote}
+Major Issues
+
+1.  Do we need SpQN? As an alternative to SpQN, if we simply threshold for the top 0.1\% of edges within each expression bin, without re-normalizing, would this give the same results? This approach would be akin to recent approaches for FDR correction within differential expression analysis, such as Independent Hypothesis Weighting. Clearly it would address the expression level skew of high correlation genes. Would it alter the inclusion of transcription factors among top edges? More broadly, can the authors provide additional validation to show that their top edges are likely to be meaningful? Are they more likely to be conserved across species, across datasets? Do they capture a greater degree of known edges from TF-target databases, for example? More PPI validated edges? These tests would help to establish the usefulness of the method.
+\end{quote}
+
+\begin{response}
+  explain how we are compatible with essentially all network inference methods, while he suggests approaches which also does the network inference.
+\end{response}  
+
+\begin{quote}
+2.  Are expression biases and/or batch effects likely to be a problem in previous coexpression analyses? Because of the known issues with batch effects and other confounders, the majority of modern coexpression analyses do not rely on individual datasets as in this manuscript (e.g., COEXPRESSdb, Greene 2015 Nat Genetics, Ferrari 2018 NAR). This is done explicitly to minimize coexpression relationships that may be attributable to experimental artifacts (e.g., see Ruprecht 2017 Trends in Plant Science). In general, the authors have not sufficiently engaged with previous literature on co-expression analysis. For example, their title claim is one that has previously been raised and discussed (e.g., Crow et al Genome Biology 2016). 
+\end{quote}
+
+\begin{response}
+  Discuss Crow at length. Explain that the bias we see is reproducible across datasets and does not go away when analyzing across datasets. Cite Crow for this.
+
+\end{response}  
+
+\begin{quote}
+3. Is this approach really likely to work for scRNA-seq data? The authors only show results for one high-depth scRNA-seq dataset. Their results are highly sensitive to pre-processing (number of PCs used for regression), the quantiles look much noisier than the bulk data, and the method is less able to remove the skew toward high-expressing genes among high-correlation edges. These do not give great confidence. Work indicating the sensitivity to depth and the informativeness of retained links (as discussed for issue 1), would make this more compelling. Otherwise the authors risk that readers may use their approach inappropriately for more common droplet-based/UMI data.  
+\end{quote}
+
+\begin{response}
+  Explain why we did the scRNA. Admit that this is not ready to apply to single-cell data.
+\end{response}  
+
+\begin{quote}
+Minor Issues
+
+I was curious why the scaling approach failed (Fig 4). Is it possible that this has to do with the PC regression? Would it succeed if PC regression was not done?
+\end{quote}
+
+\begin{response}
+  Explain that the method did not fail. But that SpQN had better performance.
+\end{response}  
+
+\begin{quote}
+The PC discussion did not add much to the paper. It is unclear why one would use exactly 4 PCs in all cases. Surely it depends on the data under scrutiny, and what the PCs are associated with (e.g., GC content, RNA integrity, total reads per sample, individual variation). I suppose this is why the authors turned to SVA for Figs 9, 11-13. Figure 12 in particular would argue against using 4 PCs, if you believe that bias and variance of distributions are important to control. Figure 13 doesn't argue one way or the other. I would suggest moving most of this content to the supplement.
+\end{quote}
+
+\begin{response}
+  Something
+\end{response}  
+
+\begin{quote}
+Intro: "Note however that co-expression is commonly performed within a single condition". Some cites here would be appreciated.
+\end{quote}
+
+\begin{response}
+  Something
+\end{response}  
+
+\section*{Reviewer 2}
+
+\begin{quote}
+Wang and colleague describe an empirical observation: genes that are higher expressed are more likely to have higher co-expression values. They provide evidence that this observation is common across different gene expression datasets. They further argue that this property is likely not biologically meaningful, and hence propose a method called SpQN for correcting for the expression to co-expression relationship. 
+
+The reported observation is interesting and potentially significant. However, I don't think the analysis and evidence provided supports the strong conclusions that 1) expression and co-expression relationship is necessarily purely unwanted, and 2) SpQN actually improves the "meaningfulness" of detected co-expression edges. I summarize major comments below.
+\end{quote}
+
+\begin{response}
+  Something
+\end{response}  
+
+\begin{quote}
+Does the observed trend need to be corrected? The observed relationship could be biological, statistical (since higher variance correlates with higher expression), or noise. The main evidence provided for assuming that the relationship between high expression and high co-expression is artifactual is that edges in PPI networks don't exhibit the same behaviour. I don't think this is sufficient to prove your point. PPI network edges are capturing a very different type of biological relationship (physical interaction), which probably is not reflected at the expression level (indeed many papers have show very low overlap between PPIs and co-expression - further, "fixed" PPIs are unlikely to be well captured by co- a single tissue co-expression network, an "ensemble" network of sort would be more relevant).  So just because PPI edges don't show the same trend, I am not convinced that the reported trend is artifactual. A more convincing line of evidence would be through replication analysis for instance (e.g., using a couple of different lung gene expression datasets)
+\end{quote}
+
+\begin{response}
+  something
+\end{response}
+
+\begin{quote}
+Does SpQN work? I don't think the provided evidence is sufficient to make a positive conclusion. The authors argue that SpQN improves co-expression because 1) more TFs are found to be nodes in top co-expression edges, and 2) the background IQR values no longer depend on expression levels. Neither of these are showing that "new edges" found by SpQN is more biologically meaningful. In other word, any method that increases the weight of co-expression edges that involve lowly expressed gene would also pass this test.  And the latter one is true by definition of SpQN.  
+\end{quote}
+
+\begin{response}
+  something
+\end{response}
+
+\begin{quote}
+Does SpQN change the ranking of top edges? As the authors state "In co-expression analysis the goal is often to identify biologically meaningful gene pairs with what is assumed to be high correlations."  This goal was not explicitly assessed/investigated. The authors didn't show what happens to the ranking of top edges with correction methods like SpQN or PCA removal. In other words, if ranking of top edges barely change, then why should we care about the background IQR trend (given that only "top" edges are going to be analyzed biologically).
+\end{quote}
+
+\begin{response}
+  something
+\end{response}
+
+\begin{quote}
+Robustness of SpQN with respect to bin size and quantile definition strategies. It wasn't clear how sensitive SpQN is to bin size in particular.
+\end{quote}
+
+\begin{response}
+  something
+\end{response}
+
+\begin{quote}
+Minor comments
+
+Figure 2C. Why x-axis called "Background IQR"? why not "IQR",  I found the terminology confusing.
+\end{quote}
+
+\begin{response}
+  something
+\end{response}
+
+\begin{quote}
+Line 45: "This shows that the observed correlations are strictly smaller than the true correlations, with an adjustment factor close to 1 when the expression level of both genes is high." Doesn't this statement imply that low expression genes should be filtered more aggressively? So can the problem be simply solved by having more stringent expression threshold when building co-expression networks?
+\end{quote}
+
+\begin{response}
+  something
+\end{response}
+
+\begin{quote}
+Line 54: "Furthermore, it suggests that the background distributions in different sub matrices are roughly related through a scaling transformation." So since this statement is not true according to Figure 4, would it imply that the model was wrong?
+\end{quote}
+
+\begin{response}
+  something
+\end{response}
+
+\begin{quote}
+Since STD of correlation coefficient depends on sample size, it would make more sense to look at top edges that pass a certain sample size dependent threshold, as opposed to a fixed \%age. (e.g., in comparison of tissue co-expression networks)
+\end{quote}
+
+\begin{response}
+  something
+\end{response}
+
+\begin{quote}
+FYI - In the early co-expression network literature, there were some work on "sparsifying" co-expression networks by taking top KNN of each node, as opposed to taking top X\% of edges by magnitude. That literature tends to show that "KNN sparsified networks" can more accurately predict gene function compared to top X\% edges sparsified network.
+\end{quote}
+
+\begin{response}
+  something
+\end{response}
+
+\section*{Our notes}
+
+Our notes on the reviews / plans for analysis and writing.
+
+\subsection*{Justify that the mean-correlation relationship should not exist}
+\subsubsection*{Check whether Regulatome data  shows bias}
+
+Data: regulatome data  in Princy's paper
+
+Method: plot the expression bias of regulatome data
+
+Time estimation: 1 day
+
+Note: regulatome data may exhibit expression bias
+
+\subsubsection*{(Check the mean-correlation relationship in technical replicates) }
+
+Data: CellBench
+
+Method: Check the mean-correlation trend for the samples of technical replicates, where there is no compositional variance among samples. Compare this trend with the samples with compositional variance. If the trends are comparably strong, it would suggest that this trend is not driven by biological variance/correlation.
+
+Time estimation: 1 day
+
+\subsubsection*{(Check how mean-correlation trend changes with sample size)}
+
+Data: GTEX
+
+Method: remove PCs for the full data (200 samples), randomly select 20,50,100,...,150 samples and plot the mean-IQR(correlation) curve in each set of the selected samples as well as the background-signal ridge plot. 
+
+Time estimation: 0.5 day
+
+
+\subsubsection*{Check whether mean-correlation relationship can be explained by sequencing depth}
+Data: GTEX
+
+Method: \\
+Aggregate samples, and then check the relationship between var(cor) and the new expression level, to show that the mean-correlation relationship can be explained by sequencing depth: \\
+For one set of same-expression-level gene (average exp level log(cpm)=2), plot the var(cor) for 
+\begin{center}
+    	        50 samples, 1 lib.size\\
+				50 samples, 2 lib.size (aggregate 2 samples into one)\\
+				…\\
+				50 samples, 5 lib.size (aggregate 5 samples into one)\\
+\end{center}
+			
+Plot the mean-var(cor) for 
+\begin{center}
+				50 samples, gene set with average exp level log(cpm) = 2 \\
+				50 samples, gene set with average exp level log(cpm) = 4 \\
+				…\\
+				50 samples, gene set with average exp level log(cpm) = 10\\
+\end{center}
+
+Time estimation: 0.5 day
+
+\subsection*{Distinguish the findings from Crow 2016 paper}
+\subsubsection*{Bias correction for WGCNA(or other tools)}
+
+Data: GTEX
+
+Method: plot node degree (number of predicted co-expression partners in WGCNA for each gene) against expression level, similar to Crow 2016 paper.
+
+Time estimation: 1 day
+
+Note: WGCNA did not not show bias for default softpower, but may show bias for larger softpower
+
+\subsection*{Downstream evaluation -- predicted vs. known network}
+\subsubsection*{Performance in TF related networks}
+
+Data: dataset in the paper suggested by Leandros
+
+Method: compare PR curve for TF-related edge estimation between adjusted and unadjusted correlations
+
+Time estimation: 1 day
+
+Note: previous work using threshold method did not show obvious improvement for TF-related edge estimation performance 
+
+\subsubsection*{Overall edges prediction performance}
+
+Data: regulatome data in Princy's paper
+
+Method: draw PR curve using regulatome as reference, similar to Princy's paper
+
+Time estimation: 1 day
+
+Note: previous work using threshold anf WGCNA method did not show obvious improvement for edge estimation performance 
+
+
+\subsection*{Downstream evaluation -- cross-data analysis to show rigorous prediction}
+
+\subsubsection*{Estimation consistency across different library sizes and sample sizes}
+
+Data: GTEX
+
+Method: Use full data as standard, compare predicted co-expression network of subsample with full data; use aggregated data as standard, compare the predicted co-expression network with the original data with same sample size. Method to quantify the similarity between two networks (modules or correlation matrix)
+
+Time estimation: 0.5 day
+
+\subsubsection*{Remove the confound of expression level to differential co-expression tests}
+
+Data: BrainSpan data, used in Crow 2016 paper; cross-species example(not found yet)
+
+Method: show that differential expression confounds co-expression by comparing differential co-expression results in the adjusted and unadjusted correlation, similar to Crow 2016 paper;
+test differential co-expression using correlation matrix (method to be found) or WGCNA
+
+Time estimation: 1 day
+
+Note: importance of differential co-expression studies?\\
+Note: this is used in Crow 2018 paper to show that controlling expression level in differential co-expression analysis could give different results to the uncontrolled analysis
+
+\subsubsection*{Consistency among different batches }
+
+Data: Crow 2016 paper; GTEX datasets with known batch information
+
+Method: compare the co-expression network estimations among different batches of the same tissue (similarity/correlation of modules or correlation matrix)
+
+Time estimation: 2-3 day
+
+\subsection*{Others}
+Compatibility of Princy's method (remove PCs) and scRNA-seq with multiple cell types
+
+\subsection*{Time estimation for WGCNA running}
+Around 3 hours per GTEX dataset; for running 4 datasets in parallel, 18 hr for comparing unadjusted and adjusted network in 9 datasets 
+
+
+
+\end{document}
+
+
+% Local Variables:
+% fill-column: 100
+% LocalWords: LocalWords 
+% End:
+

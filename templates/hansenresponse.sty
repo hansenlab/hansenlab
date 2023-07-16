@@ -1,21 +1,11 @@
-% this is my first package
-% 
-% (c) Kasper Daniel Hansen
-%
-%% This program can be redistributed and/or modified under the terms
-%% of the LaTeX Project Public License Distributed from CTAN archives
-%% in directory macros/latex/base/lppl.txt.
-% 
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
-\ProvidesPackage{hansenpreprint}
-  [2016/01/11 v0.01 LaTeX package for my own purpose]
+\ProvidesPackage{hansenresponse}
 \RequirePackage{palatino}
 \RequirePackage{mathpazo}
 \RequirePackage[english]{babel}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{parskip}
 \RequirePackage{fullpage}
-
 \RequirePackage{doi}
 \RequirePackage{url,hyperref,xcolor}
 \definecolor{darkblue}{rgb}{0.0,0.0,0.75}
@@ -23,11 +13,17 @@
             linkcolor=darkblue,urlcolor=darkblue,
             anchorcolor=darkblue,citecolor=darkblue}
 \RequirePackage{mathtools}
-
-%% For figures
 \RequirePackage{graphicx}
 \RequirePackage{subfig}
 \RequirePackage[labelfont=bf,labelsep=period,justification=raggedright]{caption}
+\newenvironment{response}{\begingroup\textbf{Response:}}{\endgroup}
+\renewenvironment{quote}{\list{}{\rightmargin\leftmargin}%
+\item\relax\textquotedblleft\ignorespaces\color{darkblue}}
+{\unskip\unskip\textquotedblright\endlist}
+\newenvironment{paperquote}{\begingroup\relax\textquotedblleft\ignorespaces\unskip\unskip\it}{\unskip\unskip\textquotedblright\endgroup}
+
+\newcommand{\fixme}[1]{{\color{red} FIXME: #1}}
+\newcommand{\XX}{{\color{red} FIXME: XX}}
 
 %% Citations
 \RequirePackage[autostyle]{csquotes}
@@ -36,19 +32,12 @@
 \renewbibmacro{in:}{}
 
 %% Comments in code
-\newcommand{\fixme}[1]{{\color{red} FIXME: #1}}
-\newcommand{\XX}{{\color{red} FIXME: XX}}
+%\newcommand{\fixme}[1]{{\color{red} FIXME: #1}}
+%\newcommand{\status}[1]{{\color{red} STATUS: #1}}
+%\newcommand{\XX}{{\color{red} FIXME: XX}}
 
-%% Typesetting authors
-\RequirePackage{authblk}
-\renewcommand\Affilfont{\small}
-\newcommand{\corrauthor}[1]{
-  \let\oldthefootnote\thefootnote
-  \renewcommand{\thefootnote}{\fnsymbol{footnote}}
-  \footnotetext[1]{To whom correspondence should be addressed. Email: #1}
-  \let\thefootnote\oldthefootnote
-}
 
 \endinput
 %%
-%% End of file `hansenpreprint.sty'.
+%% End of file `hansenresponse.sty'.
+

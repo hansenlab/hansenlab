@@ -7,7 +7,7 @@
 %% in directory macros/latex/base/lppl.txt.
 % 
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
-\ProvidesPackage{hansenpreprint}
+\ProvidesPackage{hansenpreprint2}
   [2016/01/11 v0.01 LaTeX package for my own purpose]
 \RequirePackage{palatino}
 \RequirePackage{mathpazo}
@@ -32,7 +32,7 @@
 %% Citations
 \RequirePackage[autostyle]{csquotes}
 \RequirePackage[backend=biber,style=authoryear,sorting=nyt,natbib=true,
-         maxbibnames=99,giveninits=true,uniquename=false]{biblatex}
+         maxbibnames=99,firstinits=true,uniquename=false]{biblatex}
 \renewbibmacro{in:}{}
 
 %% Comments in code
